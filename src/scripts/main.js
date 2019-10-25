@@ -1,8 +1,14 @@
+let parksClass= ""
+
 const parks = () => fetch("http://localhost:8088/parks")
     .then(result => result.json())
     .then(parsedParks => {
         parsedParks.forEach(parks => {
-            console.log(buildParkHtml(parks))
+            if (parks.visited === true) {
+                parksClass = "green"
+            } else {
+                parksClass = "red"
+            }
             const parksContainer = document.querySelector("#container")
             parksContainer.innerHTML += buildParkHtml(parks)
         })
@@ -11,11 +17,8 @@ const parks = () => fetch("http://localhost:8088/parks")
 parks()
 
 const buildParkHtml = (parks) => `
-  <article>
+  <article class="${parksClass}">
   <h3>${parks.name}</h3>
   <p>${parks.state}</p>
 </article>
 `
-
-
-
