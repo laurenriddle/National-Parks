@@ -20,5 +20,11 @@ const buildParkHtml = (parks) => `
   <article class="${parksClass}">
   <h3>${parks.name}</h3>
   <p>${parks.state}</p>
+  <p>Weather:</p>
+    <ul>
+    <li>Currently: Summary from currently in API Data</li>
+    <li>Today: Summary from hourly in API Data</li>
+    <li>Week: Summary from daily in API Data</li>
+    </ul>
 </article>
 `
