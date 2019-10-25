@@ -1,0 +1,9 @@
+.red {
+border: 2px dashed red;
+margin: 10px;
+}
+
+.green {
+border: 2px solid green;
+margin: 10px;
+}
